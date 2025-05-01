@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перейти до Гри</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .game-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .game-button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        .game-button:hover {
+            background-color: #367c39;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/capybara_logo.png" alt="Логотип Капібари" width="150">
+                <h1>Капібаринята</h1>
+            </div>
+            <nav>
+                <ul>
+                   <li><a href="index.html">головна</a></li>
+                    <li><a href="about.html">цікавеньке</a></li>
+                    <li><a href="gallery.html">селфі</a></li>
+                    <li><a href="videos.html">ролики</a></li>
+                    <li><a href="links.html">додатковий матеріал</a></li>
+				    <li><a href="contacts.html">контактики</a></li>
+					<li><a href="novo.html">гра</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div class="game-button-container">
+                <button class="game-button" onclick="window.location.href='game.html'">Зіграти в гру</button>
+            </div>
+        </main>
+    </div>
+    <button id="messageButton">Дізнайся хто ти!</button>
+    <script src="script.js"></script>
+</body>
+</html>

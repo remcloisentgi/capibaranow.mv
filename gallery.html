@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея Капібар</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/capybara_logo.png" alt="Логотип Капібари" width="150">
+                <h1>Капібаринята</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">головна</a></li>
+                    <li><a href="about.html">цікавеньке</a></li>
+                    <li><a href="gallery.html">селфі</a></li>
+                    <li><a href="videos.html">ролики</a></li>
+                    <li><a href="links.html">додатковий матеріал</a></li>
+				    <li><a href="contacts.html">контактики</a></li>
+					<li><a href="novo.html">гра</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <h2 id="gallery-header">Галерея Капібар</h2>
+            <p>Перегляньте фотографії різних видів капібар та насолодіться їхньою милотою!</p>
+            <div id="gallery-content">
+                <div class="gallery-item">
+                    <img src="images/capybara_1.jpg" alt="Звичайна капібара">
+                    <p>Звичайна капібара (Hydrochoerus hydrochaeris)</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/capybara_2.jpg" alt="Капібара Мендоси">
+                    <p>Капібара Мендоси (Hydrochoerus hydrochaeris uruguayensis)</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/capybara_3.jpg" alt="Капібара Парани" width="320>
+                    <p>Капібара Парани (Hydrochoerus hydrochaeris paranensis)</p>
+                </div>
+                <div class="gallery-item">
+                     <p>Капібара східна (Hydrochoerus hydrochaeris orientalis)</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/capybara_5.jpg" alt="Капібара західна">
+                    <p>Капібара західна (Hydrochoerus hydrochaeris occidentalis)</p>
+                </div>
+                 <div class="gallery-item">
+                    <img src="images/capybara_6.jpeg" alt="Дитинча капібари" width="320">
+                    <p>Дитинча капібари (Hydrochoerus hydrochaeris)</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <button id="messageButton">Дізнайся яка ти капа!</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageButton = document.getElementById('messageButton');
+
+            messageButton.addEventListener('click', function() {
+                alert('Перехід до тесту "Яка ти капібара"!');
+                 // Перенаправлення на іншу сторінку
+                window.location.href = 'quiz.html';
+            });
+        });
+    </script>
+</body>
+</html>

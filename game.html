@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лови Фотографію!</title>
+	<link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #counter-container {
+            background-color: #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        #photo-button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            position: absolute;
+            transition: transform 0.2s ease-out;
+        }
+
+        #photo-button img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="counter-container">
+        Кліків: <span id="click-counter">0</span>
+    </div>
+
+    <button id="photo-button">
+        <img src="images/capys_10.png" alt="Фотографія 1">
+    </button>
+
+    <script>
+        const photoButton = document.getElementById('photo-button');
+        const photo = document.getElementById('photo');
+        const clickCounterSpan = document.getElementById('click-counter');
+        const images = ["capys_10.png", "capys_11.png", "capys_12.png"]; // Замініть на свої зображення
+        let currentImageIndex = 0;
+        let clickCount = 0;
+        let maxX = window.innerWidth - 150; // Враховуємо ширину зображення
+        let maxY = window.innerHeight - 100; // Враховуємо висоту зображення (приблизно)
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            photo.src = images[currentImageIndex];
+            photo.alt = `Фотографія ${currentImageIndex + 1}`;
+        }
+
+        function moveButton(event) {
+            const buttonRect = photoButton.getBoundingClientRect();
+            const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+            const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            const deltaX = buttonCenterX - mouseX;
+            const deltaY = buttonCenterY - mouseY;
+
+            let newX = buttonRect.left;
+            let newY = buttonRect.top;
+
+            // Віддаляємо кнопку від курсора
+            const moveFactor = 10; // Регулюйте силу "відштовхування"
+
+            newX += deltaX > 0 ? moveFactor : (deltaX < 0 ? -moveFactor : 0);
+            newY += deltaY > 0 ? moveFactor : (deltaY < 0 ? -moveFactor : 0);
+
+            // Обмежуємо рух кнопки в межах вікна
+            newX = Math.max(0, Math.min(newX, maxX));
+            newY = Math.max(0, Math.min(newY, maxY));
+
+            photoButton.style.left = `${newX}px`;
+            photoButton.style.top = `${newY}px`;
+        }
+
+        photoButton.addEventListener('click', () => {
+            changeImage();
+            clickCount++;
+            clickCounterSpan.textContent = clickCount;
+        });
+
+        document.addEventListener('mousemove', moveButton);
+
+        // Початкове розміщення кнопки
+        function setInitialPosition() {
+            const initialX = Math.random() * maxX;
+            const initialY = Math.random() * maxY;
+            photoButton.style.left = `${initialX}px`;
+            photoButton.style.top = `${initialY}px`;
+        }
+
+        setInitialPosition();
+    </script>
+</body>
+</html>

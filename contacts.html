@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Капібари - Дружні Гризуни</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/capybara_logo.png" alt="Логотип Капібари" width="150">
+                <h1>Капібаринята</h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">головна</a></li>
+                    <li><a href="about.html">цікавеньке</a></li>
+                    <li><a href="gallery.html">селфі</a></li>
+                    <li><a href="videos.html">ролики</a></li>
+                    <li><a href="links.html">додатковий матеріал</a></li>
+				    <li><a href="contacts.html">контактики</a></li>
+					<li><a href="novo.html">гра</a></li>
+                    </ul>
+            </nav>
+        </aside>
+        <main class="content">
+                            <h2 id="contacts.html">контактики</h2>
+                            <p>Якщо у вас є питання, пропозиції або зауваження...</p>
+                            <div id="contacts.html">
+                                <div class="contact-item">
+                                    <p><strong>Електронна пошта:</strong> mvarcenko797@gmail.com</a></p>
+                                </div>
+                                <div class="contact-item">
+                                    <p><strong>Телефон:</strong> +380 98 752 1@#$</p>
+                                </div>
+                                <div class="contact-item">
+                                    <p><strong>Адреса:</strong> вул. Соборна, 26, м. Баранівка; Житомирська обл. 12701</p>
+                                </div>
+                                 <div class="contact-item">
+                                    <p><strong>Соціальні мережі:</strong>
+                                        <a href="https://www.tiktok.com/@pretnk?_t=ZM-8vqw8IQS7MM&_r=1" target="_blank">Tik Tok</a> |
+                                        <a href="https://discord.gg/GVNQ89H9" target="_blank">Discord</a> |
+                                        <a href="https://www.instagram.com/varchenkomaryna?igsh=aTdhZ3FocjRwY2Qx" target="_blank">Instagram</a>
+                                    </p>
+									<img src="images/capys_8.png" alt="Капібара з дитинчатами" style="position: relative; margin-top: 150px; left: 950px; " width="150">
+                                </div>
+            </div>
+        </main>
+    </div>
+    <button id="messageButton">Дізнайся яка ти капа!</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageButton = document.getElementById('messageButton');
+
+            messageButton.addEventListener('click', function() {
+                alert('Перехід до тесту "Яка ти капібара"!');
+                 // Перенаправлення на іншу сторінку
+                window.location.href = 'quiz.html';
+            });
+        });
+    </script>
+</body>
+</html>
